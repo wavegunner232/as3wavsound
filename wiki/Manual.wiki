@@ -1,0 +1,27 @@
+#labels Featured,Phase-Implementation,Phase-Requirements
+= Introduction =
+
+AS3 WavSound in the slimmest sense simply a single as3 class. it extends the generic Sound class in Flash and adds support for playing back WAVE data.
+
+You don't need this sound class if you are working with the Flash IDE or Flex Builder, since they convert .wav data directly to Sound objects. The open source SDK compiler however, does not support this feature. But it does now!
+
+= Behind the scene =
+
+I very simple: WavSound uses a Wav decoder that converts ByteData into mono/stereo, 44100/22050/11025 samplerate, 8/16 bitrate sample data, that is playable by the Sound class using [http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/flash/events/SampleDataEvent.html SampleDataEvent technique].
+
+= Example =
+
+{{{
+package {
+	public class Main extends Sprite  {
+		
+		[Embed(source = "assets/drum_loop.wav", mimeType = "application/octet-stream")]
+		public const DrumLoop:Class;
+		
+		public function Main():void {
+			var drumLoop:Sound = new WavSound(new DrumLoop() as ByteArray);
+			sound.play();
+		}
+	}
+}
+}}}
