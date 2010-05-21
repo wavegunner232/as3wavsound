@@ -1,11 +1,13 @@
 #labels Featured,Phase-Implementation,Phase-Requirements
-= Introduction =
+= AS3 WavSound =
 
-AS3 WavSound (AWS) in the slimmest sense simply a single as3 class. it extends the generic Sound class in Flash and adds support for playing back WAVE data.
+AS3 WavSound (AWS) in the slimmest sense simply is a single as3 class. It extends the generic Sound class in Flash and adds support for playing back WAVE data.
 
 You don't need this sound class if you are working with the Flash IDE or Flex Builder, since they convert .wav data directly to Sound objects. The open source SDK compiler however, does not support this feature. But it does now!
 
-= Behind the scene =
+Currently needs Flash Player 10, but I'll add support for Flash Player 9 soon as well.
+
+= How AS3 WavSound works =
 
 Its very simple really: AWS uses a Wav decoder that converts ByteData into mono/stereo, 44100/22050/11025 samplerate, 8/16 bitrate sample data, that is playable by the Sound class using [http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/flash/events/SampleDataEvent.html SampleDataEvent technique]. This way now obscure swf generation hack is necessary, which has become the defacto standard work-around.
 
