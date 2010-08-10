@@ -29,7 +29,7 @@ AS3WavSound is mostly finished except for the following features and remaining b
 
 To maintain complete transparent backwards compatibility with the Sound API, AS3WavSound needs to support _soundChannel.stop()_, which currently does nothing if obtained from a WavSound. The reason for this is because SoundChannel has been declared _final_ by Adobe's developers. And so it cannot be subclassed to redefine behavior for stop() to stop playing a WavSoundChannel. No work-around is currently known.
 
-A [http://ideas.adobe.com/ct/ct_list.bix?c=975F47A1-B925-4456-89DB-3BEFB1DA7780 feature request] has been posted at Adobe Labs to get support for a SOUND_STOP event alongside the SOUND_COMPLETE event. Please help us and vote for this feature!
+A [http://ideas.adobe.com/ct/ct_a_view_idea.bix?c=975F47A1-B925-4456-89DB-3BEFB1DA7780&idea_id=1CB054D0-4358-42FC-89D0-6B8EDE3C96F9 feature request] has been posted at Adobe Labs to get support for a SOUND_STOP event alongside the SOUND_COMPLETE event. Please help us and vote for this feature!
 
 = About performance =
 
