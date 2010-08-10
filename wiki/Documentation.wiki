@@ -1,0 +1,38 @@
+#labels Featured,Phase-Requirements,Phase-Design
+= About this documentation =
+
+Documentation for AS3WavSound may seem minimal, but there's a good reason for this. 
+
+ * _A WavSound object doesn't do anything particular a Sound object doesn't do as well_
+
+The WavSound class, AS3WavSound's pivot point, was designed with complete backwards compatibility with the original Sound class in mind. In fact, it adds no additional features _except the ability to playback WAVE sound data_. Therefor it makes sense that no more documentation is needed than Adobe already provides on the entire Sound framework!
+
+= Backwards compatible  =
+
+The reason for this grade of backwards compatibility is because it is the team's vision that only then this library can gain any momentum among mainstream users. AS3WavSound aims to be as simple to use as possible and simply fill the gap of WAVE playback support. Nothing more. Certainly not another library API for users to learn.
+
+=== How the backwards compatibility works ===
+
+WavSound has a dual mode built in: if loaded with mp3 data using _sound.load()_ it switches to the _legacy mode_ and performs just like a normal Sound object. If used any other way, ie. constructor or the extra method _loadWav()_ it switches to _non-legacy_ mode and performs like a WavSound.
+
+The idea is that the only time it should perform in legacy mode (ie. playback mp3), is when existing code dynamically loads a sound using _sound.load()_ which very well could be an mp3 file. The only other 'legacy' way of loading a Sound object is through the Sound's constructor which, unless using reflection techniques, is an explicit evocation of a WavSound object and thus it can be expected from the developer legacy mode is not needed.
+
+= Current state / Roadmap =
+
+AS3WavSound is mostly finished except for the following features and remaining bugs:
+
+ # complete SoundTransform support, such as leftToleft en rightToLeft properties (currently only panning and volume are supported)
+ # streaming support (ie. Sound.load() or Sound.loadWav())
+ # due to the final nature of SoundChannel, there currently is no way to know when a soundChannel.stop() is being called
+
+=== Quick note on the SoundChannel problem ===
+
+To maintain complete transparent backwards compatibility with the Sound API, AS3WavSound needs to support _soundChannel.stop()_, which currently does nothing if obtained from a WavSound. The reason for this is because SoundChannel has been declared _final_ by Adobe's developers. And so it cannot be subclassed to redefine behavior for stop() to stop playing a WavSoundChannel. No work-around is currently known.
+
+A [http://ideas.adobe.com/ct/ct_list.bix?c=975F47A1-B925-4456-89DB-3BEFB1DA7780 feature request] has been posted at Adobe Labs to get support for a SOUND_STOP event alongside the SOUND_COMPLETE event. Please help us and vote for this feature!
+
+= About performance =
+
+A performance hit is to be expected the moment one generates sound on the fly using the [http://www.adobe.com/devnet/flash/articles/dynamic_sound_generation/index.html Adobe sanctioned SAMPLE_DATA event approach].
+
+However, AS3WavSound has completely minimized this hit by pooling all playing WavSounds into a single Sound. In effect, in this fashion always exactly one Sound is really playing samples generated and mixed from all WavSounds active, combined. It is still not as fast as native playback however, in which Flash directly delegates to the sound card.
