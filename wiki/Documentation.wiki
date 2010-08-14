@@ -17,6 +17,21 @@ The reason for aforementioned grade of backwards compatibility is because it is 
 
 [LegacyMode How the backwards compatibility works]
 
+<strong>Example</strong>
+
+{{{
+public class Demo {
+		
+	[Embed(source = "assets/drum_loop.wav", mimeType = "application/octet-stream")]
+	public const DrumLoop:Class;
+		
+	public function foo():void {
+		var drumLoop:Sound = new WavSound(new DrumLoop() as ByteArray);
+		sound.play();
+	}
+}
+}}}
+
 = Current state / Roadmap =
 
 AS3WavSound is mostly finished except for the following features and remaining bugs:
