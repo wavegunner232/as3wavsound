@@ -1,5 +1,5 @@
 #labels Featured,Phase-Requirements,Phase-Design
-#Main documentation on AS3WavSound
+# Main documentation on AS3WavSound
 
 = About this documentation =
 
