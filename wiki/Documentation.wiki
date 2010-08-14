@@ -13,7 +13,7 @@ There is no additional API to the standard Flash Sound API. AS3WavSound simply i
 
 The reason for aforementioned grade of backwards compatibility is because it is the team's vision that only then this library can gain any momentum among mainstream users. AS3WavSound aims to be as simple to use as possible and simply fill the gap of WAVE playback support. Nothing more. Certainly not another library API for users to learn.
 
-[How the backwards compatibility works]
+[LegacyMode How the backwards compatibility works]
 
 = Current state / Roadmap =
 
