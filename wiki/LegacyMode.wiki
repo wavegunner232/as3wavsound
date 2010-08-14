@@ -6,4 +6,4 @@ WavSound has a dual mode built in: if loaded with mp3 data using _sound.load()_ 
 
 The idea is that the only time it should perform in legacy mode (ie. playback mp3), is when existing code dynamically loads a sound using _sound.load()_ which very well could be an mp3 file. The only other 'legacy' way of loading a Sound object is through the Sound's constructor which, unless using reflection techniques, is an explicit evocation of a WavSound object and thus it can be expected from the developer legacy mode is not needed.
 
-[Documentation]
+[Documentation back]
