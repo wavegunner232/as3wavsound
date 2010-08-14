@@ -1,7 +1,9 @@
 #summary One-sentence summary of this page.
 
-== How the ba ==
+== AS3WavSound legacy mode ==
 
 WavSound has a dual mode built in: if loaded with mp3 data using _sound.load()_ it switches to the _legacy mode_ and performs just like a normal Sound object. If used any other way, ie. constructor or the extra method _loadWav()_ it switches to _non-legacy_ mode and performs like a WavSound.
 
 The idea is that the only time it should perform in legacy mode (ie. playback mp3), is when existing code dynamically loads a sound using _sound.load()_ which very well could be an mp3 file. The only other 'legacy' way of loading a Sound object is through the Sound's constructor which, unless using reflection techniques, is an explicit evocation of a WavSound object and thus it can be expected from the developer legacy mode is not needed.
+
+[Documentation]
