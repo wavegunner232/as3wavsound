@@ -25,7 +25,7 @@ AS3WavSound is mostly finished except for the following features and remaining b
  # streaming support (ie. Sound.load() or Sound.loadWav())
  # due to the final nature of SoundChannel, there currently is no way to know when a soundChannel.stop() is being called
 
-=== Quick note on the SoundChannel problem ===
+* [SoundChannelBug Quick note on the SoundChannel problem]
 
 To maintain complete transparent backwards compatibility with the Sound API, AS3WavSound needs to support _soundChannel.stop()_, which currently does nothing if obtained from a WavSound. The reason for this is because SoundChannel has been declared _final_ by Adobe's developers. And so it cannot be subclassed to redefine behavior for stop() to stop playing a WavSoundChannel. No work-around is currently known.
 
