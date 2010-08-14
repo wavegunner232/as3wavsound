@@ -1,7 +1,7 @@
 #summary Main documentation on AS3WavSound
 #labels Featured,Phase-Requirements,Phase-Design
 
-= About this documentation =
+== About this documentation ==
 
 Documentation for AS3WavSound may seem minimal, but there's a good reason for this. 
 
@@ -9,7 +9,7 @@ Documentation for AS3WavSound may seem minimal, but there's a good reason for th
 
 The WavSound class, AS3WavSound's pivot point, was designed with complete backwards compatibility with the original Sound class in mind. In fact, it adds no additional features _except the ability to playback WAVE sound data_. Therefor it makes sense that no more documentation is needed than Adobe already provides on the entire Sound framework!
 
-= Transparent API =
+== Transparent API ==
 
 There is no additional API to the standard Flash Sound API. AS3WavSound simply integrates with the existing system.
 
@@ -32,7 +32,7 @@ public class Demo {
 }
 }}}
 
-= Current state / Roadmap =
+== Current state / Roadmap ==
 
 AS3WavSound is mostly finished except for the following features and remaining bugs:
 
@@ -42,14 +42,14 @@ AS3WavSound is mostly finished except for the following features and remaining b
 
 [SoundChannelBug Quick note on the SoundChannel problem]
 
-= About performance =
+== About performance ==
 
 A performance hit is to be expected the moment one generates sound on the fly using the [http://www.adobe.com/devnet/flash/articles/dynamic_sound_generation/index.html Adobe sanctioned SAMPLE_DATA event approach].
 
 However, AS3WavSound has completely minimized this hit by pooling all playing WavSounds into a single Sound. In effect, in this fashion always exactly one Sound is really playing samples generated and mixed from all WavSounds active, combined. It is still not as fast as native playback however, in which Flash directly delegates to the sound card.
 
 
-=== Some factoids ===
+== Some factoids ==
 
 <wiki:gadget url="http://www.ohloh.net/p/483136/widgets/project_factoids.xml" border="0" width="400"/>
 <wiki:gadget url="http://www.ohloh.net/p/483136/widgets/project_languages.xml" border="0" width="400" height="200"/>
