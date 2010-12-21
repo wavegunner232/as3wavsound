@@ -1,9 +1,8 @@
 #summary Main documentation on AS3WavSound
 #labels Featured,Phase-Requirements,Phase-Design
 
-||~~Currently all properties and methods of a sound.play() returned SoundChannel instance don't work: only SoundChannel.SoundTransform is functional. <br />This is because SoundChannel is final and cannot be repurposed. To fix this, in the nearby future a new SoundChannel class 'WavSoundChannel' will be returned on an overloaded sound.playWav() method and does support all the standard SoundChannel properties. This version however is not backwards compatible: this won't work: var soundchannel:SoundChannel = wavSound.playWav()).~~||
+||<font size="1" color="grey">~~Currently all properties and methods of a sound.play() returned SoundChannel instance don't work: only SoundChannel.SoundTransform is functional. <br />This is because SoundChannel is final and cannot be repurposed. To fix this, in the nearby future a new SoundChannel class 'WavSoundChannel' will be returned on an overloaded sound.playWav() method and does support all the standard SoundChannel properties. This version however is not backwards compatible: this won't work: var soundchannel:SoundChannel = wavSound.playWav()).~~<br />Backwards compatibility has been dropped in favor of coherent basic functionality, such as `wavSoundchannel.stop()`.</font>||
 
-Backwards compatibility has been dropped in favor of coherent basic functionality, such as `wavSoundchannel.stop()`.
 
 == About this documentation ==
 
