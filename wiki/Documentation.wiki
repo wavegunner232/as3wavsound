@@ -1,7 +1,9 @@
 #summary Main documentation on AS3WavSound
 #labels Featured,Phase-Requirements,Phase-Design
 
-||<font color="red"><b>Currently all properties and methods of a sound.play() returned SoundChannel instance don't work:</b> only SoundChannel.SoundTransform is functional. <br /> <br />This is because SoundChannel is final and cannot be repurposed. To fix this, in the nearby future a new SoundChannel class 'WavSoundChannel' will be returned on an overloaded sound.playWav() method and does support all the standard SoundChannel properties. This version however is not backwards compatible: this won't work: var soundchannel:SoundChannel = wavSound.playWav()).</font>||
+||~~Currently all properties and methods of a sound.play() returned SoundChannel instance don't work: only SoundChannel.SoundTransform is functional. <br />This is because SoundChannel is final and cannot be repurposed. To fix this, in the nearby future a new SoundChannel class 'WavSoundChannel' will be returned on an overloaded sound.playWav() method and does support all the standard SoundChannel properties. This version however is not backwards compatible: this won't work: var soundchannel:SoundChannel = wavSound.playWav()).~~||
+
+Backwards compatibility has been dropped in favor of coherent basic functionality, such as `wavSoundchannel.stop()`.
 
 == About this documentation ==
 
@@ -11,13 +13,13 @@ Documentation for AS3WavSound may seem minimal, but there's a good reason for th
 
 The WavSound class, AS3WavSound's pivot point, was designed with complete backwards compatibility with the original Sound class in mind. In fact, it adds no additional features _except the ability to playback WAVE sound data_. Therefor it makes sense that no more documentation is needed than Adobe already provides on the entire Sound framework!
 
+*NOTE:* backwards compatibility has recently been dropped, but the WavSound a well as the newly exposed WavSoundChannel are designed to work exactly like Sound and SoundChannel. The intent is to keep the API the same while simply adding Wave sound support.
+
 == Transparent API ==
 
-There is no additional API to the standard Flash Sound API. AS3WavSound simply integrates with the existing system.
+There is no additional API to the standard Flash Sound API. AS3WavSound simply ~~integrates with~~ mimicks the existing system.
 
 The reason for aforementioned grade of backwards compatibility is because it is the team's vision that only then this library can gain any momentum among mainstream users. AS3WavSound aims to be as simple to use as possible and simply fill the gap of WAVE playback support. Nothing more. Certainly not another library API for users to learn.
-
-[LegacyMode How the backwards compatibility works]
 
 <strong>Example</strong>
 
@@ -28,7 +30,7 @@ public class Demo {
 	public const DrumLoop:Class;
 		
 	public function foo():void {
-		var drumLoop:Sound = new WavSound(new DrumLoop() as ByteArray);
+		var drumLoop:WavSound = new WavSound(new DrumLoop() as ByteArray);
 		sound.play();
 	}
 }
@@ -40,7 +42,6 @@ AS3WavSound is mostly finished except for the following features and remaining b
 
  # complete SoundTransform support, such as leftToleft en rightToLeft properties (currently only panning and volume are supported)
  # streaming support (ie. Sound.load() or Sound.loadWav())
- # due to the final nature of SoundChannel, there currently is no way to know when a soundChannel.stop() is being called
 
 [SoundChannelBug Quick note on the SoundChannel problem]
 
