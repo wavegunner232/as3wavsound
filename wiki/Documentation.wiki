@@ -30,7 +30,7 @@ public class Demo {
 		
 	public function foo():void {
 		var drumLoop:WavSound = new WavSound(new DrumLoop() as ByteArray);
-		sound.play();
+		drumLoop.play();
 	}
 }
 }}}
