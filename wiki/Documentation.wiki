@@ -39,7 +39,7 @@ AS3WavSound is mostly finished except for the following features and remaining b
 
  # complete SoundTransform support, such as leftToleft en rightToLeft properties (currently only panning and volume are supported)
  # streaming support (ie. Sound.load() or Sound.loadWav())
- # support for alternative samplerates by automatic upsampling to the nearest upper samplerate supported or downsampling to the highest supported samplerate.
+ # better upsampling algorithm. The current one is a rudimentary one that provides low quality upsampling (quality degrades for lower source rates).
 
 [SoundChannelBug Quick note on the SoundChannel problem]
 
