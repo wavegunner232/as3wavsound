@@ -9,7 +9,7 @@ Documentation for AS3WavSound may seem minimal, but there's a good reason for th
 
 The WavSound class, AS3WavSound's pivot point, was designed to use the same API as the existing Sound classes and acts exactly the same. In fact, it adds no additional features _except the ability to playback WAVE sound data_. Therefor it makes sense that no more documentation is needed than Adobe already provides on the entire Sound framework!
 
-Due to limitations of Adobe's Sound framework (specifically the SoundChannel class is made _final_), backwards compatibility has been dropped, but the WavSound as well as the WavSoundChannel are designed to work exactly like Sound and good old SoundChannel. The intent is to keep the API the same while simply adding Wave sound support.
+Due to limitations of Adobe's Sound framework (specifically the SoundChannel class is made _final_), backwards compatibility has been dropped, but the WavSound as well as the WavSoundChannel are designed to work exactly like Sound and good old SoundChannel. The intent is to keep the API the same while simply adding Wave sound support. You just can't play mp3 files with this library anymore, because we're not extending the existing sound library anymore.
 
 == Transparent API ==
 
