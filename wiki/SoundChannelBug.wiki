@@ -9,8 +9,9 @@ A solution could be to get support for a SOUND_STOP event alongside the SOUND_CO
 
 Backwards compatibility has been dropped in favor of a working solution. Instead all Adobe's sound classes have a analog wav counterpart now.
 
-Sound -> !WavSound
-!SoundChannel -> !WavSoundChannel
+  * Sound -> !WavSound
+  * !SoundChannel -> !WavSoundChannel
+
 Now wavSoundChannel.stop() works for .wav files.
 
 [Documentation back]
