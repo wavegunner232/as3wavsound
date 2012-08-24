@@ -47,7 +47,7 @@ AS3WavSound is mostly finished except for the following features and remaining b
 
 A performance hit is to be expected the moment one generates sound on the fly using the [http://www.adobe.com/devnet/flash/articles/dynamic_sound_generation/index.html Adobe sanctioned SAMPLE_DATA event approach].
 
-However, AS3WavSound has completely minimized this hit by pooling all playing WavSounds into a single Sound. In effect, in this fashion always exactly one Sound is really playing samples generated and mixed from all WavSounds active, combined. It is still not as fast as native playback however, in which Flash directly delegates to the sound card.
+However, AS3WavSound has completely minimized this hit by pooling all playing !WavSounds into a single Sound. In effect, in this fashion always exactly one Sound is really playing samples generated and mixed from all !WavSounds active, combined. It is still not as fast as native playback however, in which Flash directly delegates to the sound card.
 
 
 == Some factoids ==
