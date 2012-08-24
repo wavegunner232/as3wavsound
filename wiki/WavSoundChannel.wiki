@@ -1,2 +1,4 @@
 #labels Phase-Design
 WavSoundChannel is the class in the AWS library that encapsulates the playback API just as Adobe's [http://www.adobe.com/livedocs/flash/9.0/ActionScriptLangRefV3/flash/media/SoundChannel.html SoundChannel] class does. It supports all methods the standard SoundChannel class does.
+
+[Documentation back]
